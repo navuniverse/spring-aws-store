@@ -38,11 +38,19 @@ public class StorePropertyController {
 	@Value("${hello}")
 	private String storeValue;
 
+	@Value("${securehello}")
+	private String secureStoreValue;
+	
 	@GetMapping("store/value")
 	public String getStoreValue() {
 		return storeValue;
 	}
 
+	@GetMapping("store/value/secure")
+	public String getSecureStoreValue() {
+		return secureStoreValue;
+	}
+	
 	@GetMapping("store/parameter/default")
 	public Parameter getParameterFromSSMByName() {
 
