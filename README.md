@@ -6,7 +6,11 @@ The application uses Amazon Access Key and Secret key to access the Parameter st
 
 # changes to do to use
 
-1. You have to update your AWS Access Key and Secret Key in application.properties before use.
+1. You have to create three environment variable for your AWS Credentials -
+  a. AWS_DEV_ACCESS_KEY - Access Key of your AWS Acccount where Parameter Config is Stored
+  b. AWS_DEV_SECRET_KEY - Secret Key of your AWS Acccount where Parameter Config is Stored
+  c. AWS_DEV_REGION - Region of your AWS Acccount where Parameter Config is Stored
+  
 2. You must create Parameter /config/awsstore/hello in your AWS.
 3. Run the application as Spring Boot and open swagger at http://localhost:8083/awsstore/swagger-ui.html in order to verify and test the integration. 
 4. The APIs provided will help you access properties from AWS Parameter Store in multiple ways - using @Value, using @Autowired ConfigurableEnvironment and using AWS SSM client.
