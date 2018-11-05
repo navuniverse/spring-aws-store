@@ -28,8 +28,12 @@ public class ParameterStoreConfig {
 	@Value("${cloud.aws.credentials.secretKey}")
 	private String secretKey;
 
+	@Value("${hello}")
+	private String hello;
+
 	@Bean
 	public AWSCredentials credential() {
+		System.out.println("I am saying hello");
 		return new BasicAWSCredentials(acessKey, secretKey);
 	}
 
